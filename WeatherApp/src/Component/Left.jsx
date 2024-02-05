@@ -4,6 +4,7 @@ import sun from '../Images/sun.png'
 import snow from '../Images/snow.png'
 import rain from '../Images/rain.png'
 import mist from '../Images/mist.png'
+import search from '../Images/search.png'
 import WeatherContext from "../Context/WeatherContext";
 
 const Left = () =>{
@@ -11,7 +12,7 @@ const Left = () =>{
     const {handleKeyUp,setName,cordinates,name,temp,today,input} = useContext(WeatherContext);
     const [temperature,setTemperature] = useState({temp: '--',desc: '--'});
     const [location,setLocation] = useState({city: "--" ,state: '--',country: '--'});
-    const [img,setImg] = useState(sun);
+    const [img,setImg] = useState(search);
 
     useEffect(() =>{
         if(temp != 0){
@@ -46,6 +47,7 @@ const Left = () =>{
         }
         else{
             setLocation({city: "--", state: "--", country : "--"})
+            setImg(search)
         }
     },[cordinates])
 
